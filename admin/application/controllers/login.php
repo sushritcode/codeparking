@@ -15,8 +15,17 @@ class Login extends CI_Controller
 		$this->load->model('Users_model');
 		$data = array();
 		$data = $this->Users_model->checkLogin(base64_decode($this->uri->segment(3)),base64_decode($this->uri->segment(4)));
-		print "came here";
-		exit;
+		if($data)
+		{
+			//redirect($this->config->item('base_url') . 'dashboard/', 'refresh');
+			echo "1";
+		}
+		else
+		{
+			//redirect($this->config->item('base_url') . '', 'refresh');
+			
+			echo "0";
+		}
 	}
 }
 ?>

@@ -1,14 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class logout extends CI_Controller 
+class Logout extends CI_Controller 
 {
 
 	function __construct()
 	{
 		// this is your constructor
 		parent::__construct();
-		$this->load->helper('form');
-		$this->load->helper('url');
 	}
 
 
@@ -16,9 +14,9 @@ class logout extends CI_Controller
 
 	function index()
 	{
-		//$this->session->sess_destroy();
-		//print $this->config->item('base_url')
-		redirect($this->config->item('base_url') . 'login', 'refresh');
+		
+		$this->session->sess_destroy();
+		redirect($this->config->item('base_url') . '', 'refresh');
 	}
 }
 ?>

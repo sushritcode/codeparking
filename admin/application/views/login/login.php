@@ -71,7 +71,7 @@
 
 											<div class="space-6"></div>
 
-											<form method="POST" action="<?php echo $base_url;?>dashboard" id="frmLogin" name="frmLogin"/>
+											<form method="POST" action="<?php echo $base_url;?>dashboard/" id="frmLogin" name="frmLogin"/>
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">

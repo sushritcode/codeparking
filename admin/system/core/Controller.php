@@ -65,7 +65,7 @@ class CI_Controller {
 		{
 			if(in_array($this->router->method,$this->loginRequired))
 			{
-				if(trim($this->session->userdata("CustomerID")) =="")
+				if(trim($this->session->userdata("LMUserid")) == "")
 				{
 					redirect($this->config->item('base_url') . '', 'refresh');
 				}

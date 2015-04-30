@@ -77,12 +77,13 @@ class Users_model extends CI_Model
 	}
 	function checkLogin($Userid , $Password)
 	{
-		$where = " a.LMLoginEnabled = 1 and a.LMUserid='".trim($Userid)."' and a.LMPassword = '".trim($Password)."' and a.LMLoginId = b.LMLoginId ";
-		$result = $this->db->get_where(" LMLoginUsers a , LMUserProfile b ",$where , FALSE);
+		$where = " LMLoginEnabled = '1' and LMUserid='".trim($Userid)."' and LMPassword = '".trim($Password)."' ";
+		//$where = " a.LMLoginEnabled = 1 and a.LMUserid='".trim($Userid)."' and a.LMPassword = '".trim($Password)."' and a.LMLoginId = b.LMLoginId ";
+		$result = $this->db->get_where("LMLoginUsers",$where ,TRUE);
 		if ($result->num_rows() > 0)
 		{
 			$row = $result->row();
-			//$this->session->set_userdata($row);
+			$this->session->set_userdata($row);
 			return true;
 		}
 		return false;
