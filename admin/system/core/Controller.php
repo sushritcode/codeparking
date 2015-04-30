@@ -49,8 +49,29 @@ class CI_Controller {
 		$this->load =& load_class('Loader', 'core');
 
 		$this->load->initialize();
-		
+
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->library('session');
+		$this->url = $this->config->item('url');
+		$this->path = $this->config->item('path');
+		$this->checkLogin();
+
 		log_message('debug', "Controller Class Initialized");
+	}
+	function checkLogin()
+	{
+		if(isset($this->loginRequired))
+		{
+			if(in_array($this->router->method,$this->loginRequired))
+			{
+				if(trim($this->session->userdata("CustomerID")) =="")
+				{
+					redirect($this->config->item('base_url') . '', 'refresh');
+				}
+			}
+		}
+
 	}
 
 	public static function &get_instance()

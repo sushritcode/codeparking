@@ -3,6 +3,14 @@
 class Dashboard extends CI_Controller 
 {
 
+
+	function __construct()
+	{
+		$this->loginRequired = Array("index");
+		parent::__construct();
+	}
+
+
 	
 
 	public function index()

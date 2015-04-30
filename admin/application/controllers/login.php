@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends CI_Controller 
+{
 
 	public function index()
 	{
+
 		$data = array();
 		$data['base_url'] = $this->config->item('base_url');
 		$this->load->view('login/login', $data);
@@ -17,5 +19,6 @@ class Login extends CI_Controller {
 		exit;
 	}
 }
+?>
 
 

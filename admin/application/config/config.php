@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/letsmeet/codeparking/admin/';
+$config['base_url']	= 'http://localhost/letsemeet/codeparking/trunk/admin/';
 
 /*
 |--------------------------------------------------------------------------
@@ -225,7 +225,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'e3196ff0ad6cb5543652d418db0d96c1';
 
 /*
 |--------------------------------------------------------------------------
