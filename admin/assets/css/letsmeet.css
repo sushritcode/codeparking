@@ -1,0 +1,25 @@
+.corosolHtmBox
+{
+#border: 1px solid; 
+margin: 50px 0px 0px 65px; 
+width: 800px; 
+height: 500px;
+}
+.corosolHtmItem
+{
+margin:30px 15px 0px 15px;
+width: 750px; 
+height: 450px;
+}
+.fr
+{
+float:right;
+}
+.fl
+{
+float:left;
+}
+.cl
+{
+clear:both;
+}

@@ -25,6 +25,15 @@ class Users extends CI_Controller {
 	}
 	public function edit()
 	{
+		
+		$data = array();
+		$data['base_url'] = $this->config->item('base_url');
+		$this->load->view('admin_header', $data);
+		$this->load->view('admin_navigation', $data);
+		$this->load->view('users_edit', $data);
+		
+		$this->load->view('admin_footer', $data);
+
 	}
 }
 

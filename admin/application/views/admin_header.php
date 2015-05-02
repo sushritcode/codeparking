@@ -15,6 +15,7 @@ $avatar_root_url = $base_url."assets/avatars/";
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="<?php echo $css_root_url;?>/letsmeet.css" />
 		<link rel="stylesheet" href="<?php echo $css_root_url;?>/bootstrap.css" />
 		<link rel="stylesheet" href="<?php echo $css_root_url;?>font-awesome.css" />
 
