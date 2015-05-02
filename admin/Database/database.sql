@@ -66,3 +66,78 @@ CREATE TABLE IF NOT EXISTS `LMUserProfile` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE IF NOT EXISTS `mstIndustry` (
+  `Industryid` int(11) NOT NULL AUTO_INCREMENT,
+  `IndustryName` varchar(200) NOT NULL,
+  PRIMARY KEY (`Industryid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
+
+--
+-- Dumping data for table `mstIndustry`
+--
+
+INSERT INTO `mstIndustry` (`Industryid`, `IndustryName`) VALUES
+(1, 'Agriculture'),
+(2, 'Grocery '),
+(3, 'Accounting'),
+(4, 'Health Care '),
+(5, 'Advertising'),
+(6, 'Internet Publishing '),
+(7, 'Aerospace'),
+(8, 'Investment Banking '),
+(9, 'Aircraft'),
+(10, 'Legal '),
+(11, 'Airline'),
+(12, 'Manufacturing '),
+(13, 'Apparel & Accessories'),
+(14, 'Motion Picture & Video '),
+(15, 'Automotive'),
+(16, 'Music '),
+(17, 'Banking'),
+(18, 'Newspaper Publishers '),
+(19, 'Broadcasting'),
+(20, 'Online Auctions '),
+(21, 'Brokerage'),
+(22, 'Pension Funds '),
+(23, 'Biotechnology'),
+(24, 'Pharmaceuticals '),
+(25, 'Call Centers'),
+(26, 'Private Equity '),
+(27, 'Cargo Handling'),
+(28, 'Publishing '),
+(29, 'Chemical'),
+(30, 'Real Estate '),
+(31, 'Computer'),
+(32, 'Retail & Wholesale '),
+(33, 'Consulting'),
+(34, 'Securities & Commodity Exchanges '),
+(35, 'Consumer Products'),
+(36, 'Service '),
+(37, 'Cosmetics'),
+(38, 'Soap & Detergent '),
+(39, 'Defense'),
+(40, 'Software '),
+(41, 'Department Stores'),
+(42, 'Sports '),
+(43, 'Education'),
+(44, 'Technology '),
+(45, 'Electronics'),
+(46, 'Telecommunications '),
+(47, 'Energy'),
+(48, 'Television '),
+(49, 'Entertainment & Leisure'),
+(50, 'Transportation '),
+(51, 'Executive Search'),
+(52, 'Trucking '),
+(53, 'Financial Services'),
+(54, 'Venture Capital '),
+(55, 'Food'),
+(56, 'Beverages'),
+(57, 'Tobacco'),
+(58, '');
+
+
+
+
+
