@@ -362,7 +362,7 @@ $avatar_root_url = $base_url."assets/avatars/";
 								</li>
 
 								<li>
-									<a href="profile.html">
+									<a href="<?php echo $base_url;?>users/edit">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
