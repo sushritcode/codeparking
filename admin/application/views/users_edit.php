@@ -14,11 +14,10 @@
 					<div class="item corosolHtmItem active">
 						<form class="form-horizontal" name="basic-details">
 <fieldset>
-
 <!-- Form Name -->
 <legend>Basic Details</legend>
-
 <!-- Select Basic -->
+<div class="elementContainer">
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic"></label>
   <div class="col-md-5">
@@ -73,6 +72,7 @@
     <textarea class="form-control" id="briefDescription" name="briefDescription">Brief Description Of Company</textarea>
   </div>
 </div>
+</div>
 
 <!-- Button (Double) -->
 <div class="form-group">
@@ -96,6 +96,7 @@
 <!-- Form Name -->
 <legend>Contact Details</legend>
 
+<div class="elementContainer">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="phone1"></label>  
@@ -131,7 +132,7 @@
     
   </div>
 </div>
-
+</div>
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="skip"></label>
@@ -153,6 +154,7 @@
 <!-- Form Name -->
 <legend>Address Details</legend>
 
+<div class="elementContainer">
 <!-- Textarea -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="address1"></label>
@@ -176,7 +178,7 @@
     <textarea class="form-control" id="address3" name="address3">Address #2</textarea>
   </div>
 </div>
-
+</div>
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="skip"></label>
@@ -198,6 +200,7 @@
 <!-- Form Name -->
 <legend>Social Media</legend>
 
+<div class="elementContainer">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="facebookid"></label>  
@@ -233,6 +236,7 @@
     
   </div>
 </div>
+</div>
 
 <!-- Button (Double) -->
 <div class="form-group">
@@ -255,6 +259,7 @@
 <!-- Form Name -->
 <legend>Billing And Localisation</legend>
 
+<div class="elementContainer">
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="billersName"></label>  
@@ -287,7 +292,7 @@
     </select>
   </div>
 </div>
-
+</div>
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="skip"></label>
