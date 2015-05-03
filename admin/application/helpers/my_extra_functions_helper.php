@@ -1,9 +1,41 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-if ( ! function_exists('test_method'))
+if ( ! function_exists('industry_list'))
 {
-    function test_method($var = '')
-    {
-        return $var;
-    }   
+	function industry_list()
+	{
+		$ci =& get_instance();
+		$ci->load->database();
+		$ci->db->select("Industryid, IndustryName")->from('mstIndustry');
+		$query = $ci->db->get();
+		$recordSet['list'] = $query->result();
+		return $recordSet['list'];
+	}   
 }
+if ( ! function_exists('timezone_list'))
+{
+	function timezone_list()
+	{
+
+		$ci =& get_instance();
+		$ci->load->database();
+		$ci->db->select("id, name, timezone")->from('mstTimezones');
+		$query = $ci->db->get();
+		$recordSet['list'] = $query->result();
+		return $recordSet['list'];
+	}   
+}
+if ( ! function_exists('currency_list'))
+{
+        function currency_list()
+        {
+
+                $ci =& get_instance();
+                $ci->load->database();
+                $ci->db->select("id_countries, countryname, currency_code, currency_name, IFNULL(currency_symbol,'') as 'currency_symbol'")->from('mstCurrency');
+                $query = $ci->db->get();
+                $recordSet['list'] = $query->result();
+                return $recordSet['list'];
+        }
+}
+
 ?>

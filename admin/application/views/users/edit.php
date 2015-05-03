@@ -22,9 +22,10 @@
   <label class="col-md-4 control-label" for="selectbasic"></label>
   <div class="col-md-5">
     <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">Industry Type</option>
-      <option value="2">Option one</option>
-      <option value="">Option two</option>
+      <option value="" selected>Industry Type</option>
+	 <?php foreach ($recordSetIndustry as $record): ?>
+      		<option value="<?php echo $record->Industryid?>"><?php echo $record->IndustryName;?></option>
+	 <?php endforeach; ?>
     </select>
   </div>
 </div>
@@ -274,9 +275,11 @@
   <label class="col-md-4 control-label" for="currency"></label>
   <div class="col-md-5">
     <select id="currency" name="currency" class="form-control" multiple="multiple">
-      <option value="1">Select Currency</option>
-      <option value="2">Currency 1</option>
-      <option value="">Currency 2</option>
+      <option value="" selected>Select Currency</option>
+	 <?php foreach ($recordSetCurrency as $record): ?>
+      		<option value="<?php echo $record->id_countries?>" ><?php echo $record->countryname." (".$record->currency_code."-".$record->currency_name."-".$record->currency_symbol.") ";?></option>
+	<?php endforeach;?>
+       
     </select>
   </div>
 </div>
@@ -286,9 +289,10 @@
   <label class="col-md-4 control-label" for="timezones"></label>
   <div class="col-md-5">
     <select id="timezones" name="timezones" class="form-control" multiple="multiple">
-      <option value="1">Select Time Zones</option>
-      <option value="2">Time Zone 1</option>
-      <option value="">Time Zone 2</option>
+      <option value="" selected>Select Time Zones</option>
+	 <?php foreach ($recordSetTimeZone as $record): ?>
+      		<option value="<?php echo $record->id?>" selected><?php echo $record->timezone." - ".$record->name;?></option>
+	<?php endforeach;?>
     </select>
   </div>
 </div>
