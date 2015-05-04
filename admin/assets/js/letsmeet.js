@@ -474,6 +474,10 @@ function loginResponse()
 
 	}
 };
+function slideCorosal(ele)
+{
+	ele.setAttribute("data-slide-to",ele.attributes['next-slide'].value);
+};
 
 
 

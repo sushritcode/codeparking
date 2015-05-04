@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-10 column">
-			<div class="carousel slide corosolHtmBox" id="carousel-144227" >
+			<div class="carousel slide corosolHtmBox" id="carousel-144227"  data-interval="false">
 				<!--ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#carousel-144227" style="border:1px solid">
 					</li>
@@ -87,7 +87,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <!--button id="skip" name="skip" class="btn btn-success">Skip &gt;&gt;</button-->
-    <button id="SaveandNext" name="SaveandNext" class="btn btn-success fr" data-slide-to="1" data-target="#carousel-144227">Save and Next</button>
+    <button id="SaveandNext" name="SaveandNext" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="1" onClick="javascript:slideCorosal(this);">Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -154,7 +154,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="previous" name="previous1" class="btn btn-success fl" data-slide-to="0" data-target="#carousel-144227" >Previous</button>
-    <button id="SaveandNext1" name="SaveandNext1" class="btn btn-success fr" data-slide-to="2" data-target="#carousel-144227" >Save and Next</button>
+    <button id="SaveandNext1" name="SaveandNext1" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="2" onClick="javascript:slideCorosal(this);" >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -208,7 +208,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="1" data-target="#carousel-144227"   data-slide-to="3" data-target="#carousel-144227"  >Previous</button>
-    <button id="SaveandNext2" name="SaveandNext2" class="btn btn-success fr"  data-slide-to="3" data-target="#carousel-144227" >Save and Next</button>
+    <button id="SaveandNext2" name="SaveandNext2" class="btn btn-success fr"  data-slide-to="" data-target="#carousel-144227" next-slide="3" onClick="javascript:slideCorosal(this);" >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -275,7 +275,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="2" data-target="#carousel-144227"    data-slide-to="4" data-target="#carousel-144227"   >Previous</button>
-    <button id="SaveandNext3" name="SaveandNext3" class="btn btn-success fr"   data-slide-to="4" data-target="#carousel-144227"  >Save and Next</button>
+    <button id="SaveandNext3" name="SaveandNext3" class="btn btn-success fr"   data-slide-to="" data-target="#carousel-144227" next-slide="4" onClick="javascript:slideCorosal(this);"  >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -341,7 +341,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="3" data-target="#carousel-144227"  >Previous</button>
-    <button id="done" name="done" class="btn btn-success fr">Done</button>
+    <button id="done" name="done" class="btn btn-success fr" next-slide="1" onClick="javascript:slideCorosal(this);">Done</button>
   </div>
 </div>
 <div class="cl"></div>
