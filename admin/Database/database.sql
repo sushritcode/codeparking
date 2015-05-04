@@ -552,4 +552,4 @@ INSERT INTO `mstCurrency` (`id_countries`, `name`, `iso_alpha2`, `iso_alpha3`, `
 
 ALTER TABLE `mstCurrency` CHANGE `name` `countryname` VARCHAR( 200 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
 ALTER TABLE `mstCurrency` CHANGE `currrency_symbol` `currency_symbol` VARCHAR( 3 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
-
+RENAME TABLE timezone to mstTimezones;
