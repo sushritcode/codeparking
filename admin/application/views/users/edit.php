@@ -28,7 +28,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectbasic"></label>
   <div class="col-md-5">
-    <select id="selectbasic" name="selectbasic" class="form-control">
+    <select id="industryType" name="industryType" class="form-control" required>
       <option value="" selected>Industry Type</option>
 	 <?php foreach ($recordSetIndustry as $record): ?>
       		<option value="<?php echo $record->Industryid?>"><?php echo $record->IndustryName;?></option>
@@ -41,7 +41,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="companyname"></label>  
   <div class="col-md-5">
-  <input id="companyname" name="companyname" placeholder="Company Name" class="form-control input-md" required="" type="text">
+  <input id="companyname" name="companyname" placeholder="Company Name" class="form-control input-md" required="" type="text" required>
     
   </div>
 </div>
@@ -59,7 +59,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="displayName"></label>  
   <div class="col-md-5">
-  <input id="displayName" name="displayName" placeholder="Display Name" class="form-control input-md" type="text">
+  <input id="displayName" name="displayName" placeholder="Display Name" class="form-control input-md" type="text" required>
     
   </div>
 </div>
@@ -77,7 +77,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="briefDescription"></label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="briefDescription" name="briefDescription">Brief Description Of Company</textarea>
+    <textarea class="form-control" id="briefDescription" name="briefDescription" required>Brief Description Of Company</textarea>
   </div>
 </div>
 </div>
@@ -87,7 +87,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <!--button id="skip" name="skip" class="btn btn-success">Skip &gt;&gt;</button-->
-    <button id="SaveandNext" name="SaveandNext" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="1" onClick="javascript:slideCorosal(this);">Save and Next</button>
+    <button type="submit" id="SaveandNext" name="SaveandNext" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="1" onClick="javascript:slideCorosal(this,document.forms['basic-details']);">Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -154,7 +154,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="previous" name="previous1" class="btn btn-success fl" data-slide-to="0" data-target="#carousel-144227" >Previous</button>
-    <button id="SaveandNext1" name="SaveandNext1" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="2" onClick="javascript:slideCorosal(this);" >Save and Next</button>
+    <button id="SaveandNext1" name="SaveandNext1" class="btn btn-success fr" data-slide-to="" data-target="#carousel-144227" next-slide="2" onClick="javascript:slideCorosal(this, document.forms['contact-details']);" >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -208,7 +208,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="1" data-target="#carousel-144227"   data-slide-to="3" data-target="#carousel-144227"  >Previous</button>
-    <button id="SaveandNext2" name="SaveandNext2" class="btn btn-success fr"  data-slide-to="" data-target="#carousel-144227" next-slide="3" onClick="javascript:slideCorosal(this);" >Save and Next</button>
+    <button id="SaveandNext2" name="SaveandNext2" class="btn btn-success fr"  data-slide-to="" data-target="#carousel-144227" next-slide="3" onClick="javascript:slideCorosal(this,document.forms['address-details']);" >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -275,7 +275,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="2" data-target="#carousel-144227"    data-slide-to="4" data-target="#carousel-144227"   >Previous</button>
-    <button id="SaveandNext3" name="SaveandNext3" class="btn btn-success fr"   data-slide-to="" data-target="#carousel-144227" next-slide="4" onClick="javascript:slideCorosal(this);"  >Save and Next</button>
+    <button id="SaveandNext3" name="SaveandNext3" class="btn btn-success fr"   data-slide-to="" data-target="#carousel-144227" next-slide="4" onClick="javascript:slideCorosal(this,document.forms['social-media']);"  >Save and Next</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -293,7 +293,7 @@
 							 <div class="col-md-2 stepsRegistration active">5 of 6</div>
 						</div>
 	
-						<form class="form-horizontal">
+						<form class="form-horizontal" name="billinglocal">
 <fieldset>
 
 <!-- Form Name -->
@@ -341,7 +341,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="3" data-target="#carousel-144227"  >Previous</button>
-    <button id="done" name="done" class="btn btn-success fr" next-slide="1" onClick="javascript:slideCorosal(this);">Done</button>
+    <button id="done" name="done" class="btn btn-success fr" next-slide="1" onClick="javascript:slideCorosal(this , document.forms['billinglocal']);">Done</button>
   </div>
 </div>
 <div class="cl"></div>

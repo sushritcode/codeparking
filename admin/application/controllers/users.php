@@ -4,7 +4,7 @@ class Users extends CI_Controller {
 
 	function __construct()
 	{
-		$this->loginRequired = Array("edit");
+		$this->loginRequired = Array("edit","save");
 		parent::__construct();
 	}
 
@@ -38,6 +38,13 @@ class Users extends CI_Controller {
 		$this->load->view('users/edit', $data);
 		$this->load->view('admin_footer', $data);
 
+	}
+	public function save()
+	{
+		$this->load->model('Users_model');
+		$data = $this->Users_model->UpdateUsers();
+		echo "1";
+			
 	}
 }
 

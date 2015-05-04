@@ -90,7 +90,32 @@ class Users_model extends CI_Model
 
 
 	}
-	
-	
+	function UpdateUsers()
+	{
+		$this->load->helper('my_extra_functions');
+		$formTableMap = form_table_map();
+		$formValues = $this->input->get(NULL,true);
+		$numEntries =  $this->db->where('LMLoginId = ', $this->session->userdata('LMLoginId'))->get('LMUserProfile')->num_rows();
+		if($numEntries == 0)
+		{
+			$this->db->set('LMLoginId', trim($this->session->userdata('LMLoginId')));
+			$this->db->insert('LMUserProfile');
+
+		}
+		if(isset($formValues['formname']))
+		{
+			if($formValues['formname'] != "")
+			{
+
+				foreach($formValues as $key => $value):
+					if($key != "formname"):
+					$this->db->set( $formTableMap[$formValues['formname']][$key] , trim($value));
+				endif;
+				endforeach;
+				$this->db->where('LMLoginId' ,$this->session->userdata('LMLoginId'));
+				$this->db->update('LMUserProfile');
+			}
+		}
+	}
 }
 

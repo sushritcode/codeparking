@@ -553,3 +553,25 @@ INSERT INTO `mstCurrency` (`id_countries`, `name`, `iso_alpha2`, `iso_alpha3`, `
 ALTER TABLE `mstCurrency` CHANGE `name` `countryname` VARCHAR( 200 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
 ALTER TABLE `mstCurrency` CHANGE `currrency_symbol` `currency_symbol` VARCHAR( 3 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
 RENAME TABLE timezone to mstTimezones;
+DROP TABLE LMUserProfile;
+
+
+CREATE TABLE IF NOT EXISTS `LMUserProfile` (
+  `ProfileID` int(11) NOT NULL AUTO_INCREMENT,
+  `LMLoginId` int(11) NOT NULL,
+  `CompanyName` varchar(255) NOT NULL,
+  `IndustryType` int(4) NOT NULL,
+  `DisplayName` varchar(255) NOT NULL,
+  `CompanyWebsite` varchar(255) NOT NULL,
+  `Description` text NOT NULL,
+  `NatureOfBusiness` varchar(255) NOT NULL,
+  PRIMARY KEY (`ProfileID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `LMUserProfile`
+--
+
+INSERT INTO `LMUserProfile` (`ProfileID`, `LMLoginId`, `CompanyName`, `IndustryType`, `DisplayName`, `CompanyWebsite`, `Description`, `NatureOfBusiness`) VALUES
+(1, 5, 'Quadridge1', 0, 'Quadridge', 'http://www.quadridge.com', 'Brief Description Of Company', 'Information Technology');
+

@@ -37,5 +37,17 @@ if ( ! function_exists('currency_list'))
                 return $recordSet['list'];
         }
 }
+if ( ! function_exists('form_table_map'))
+{
+        function form_table_map()
+        {
 
+		//formname
+		$arrForms = array("basic-details"=>array());
+
+		//formelementname 
+		$arrForms["basic-details"] = array("companyname"=>"CompanyName","natureofbusiness"=>"NatureOfBusiness","displayName"=>"DisplayName","companyURL"=>"CompanyWebsite","briefDescription"=>"Description","industryType"=>"IndustryType");
+		return $arrForms;
+        }
+}
 ?>

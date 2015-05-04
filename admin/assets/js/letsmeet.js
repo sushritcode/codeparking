@@ -474,10 +474,35 @@ function loginResponse()
 
 	}
 };
-function slideCorosal(ele)
+function slideCorosal(ele, frmName)
 {
-	ele.setAttribute("data-slide-to",ele.attributes['next-slide'].value);
+
+
+	var uri = "?formname="+frmName.name+"&";
+	var len  = document.forms["basic-details"].getElementsByTagName("input").length;
+	var eleArrray = document.forms["basic-details"].getElementsByTagName("input");
+	for(var i=0;i<len;i++)
+		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
+	var len  = document.forms["basic-details"].getElementsByTagName("textarea").length;
+	var eleArrray = document.forms["basic-details"].getElementsByTagName("textarea");
+	for(var i=0;i<len;i++)
+		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
+	var len  = document.forms["basic-details"].getElementsByTagName("select").length;
+	var eleArrray = document.forms["basic-details"].getElementsByTagName("select");
+	for(var i=0;i<len;i++)
+		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
+
+	var frmAction =BASEURL+"users/save/";
+	xmlhttp = initAjax();
+	xmlhttp.corosalObj = ele
+	xmlhttp.onreadystatechange = function(ele) { 
+		if(xmlhttp.readyState==4)
+		{
+			xmlhttp.corosalObj.setAttribute("data-slide-to",xmlhttp.corosalObj.attributes['next-slide'].value);
+		} 
+	};
+	var url = frmAction+uri;
+	xmlhttp.open("POST",url,true);
+	xmlhttp.send(null);
+	return true;
 };
-
-
-
