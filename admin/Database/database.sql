@@ -292,7 +292,7 @@ INSERT INTO `timezones` (`id`, `name`, `timezone`) VALUES
 
 
 
-REATE TABLE IF NOT EXISTS `mstCurrency` (
+CREATE TABLE IF NOT EXISTS `mstCurrency` (
   `id_countries` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
   `iso_alpha2` varchar(2) DEFAULT NULL,
@@ -550,6 +550,6 @@ INSERT INTO `mstCurrency` (`id_countries`, `name`, `iso_alpha2`, `iso_alpha3`, `
 (238, 'Zambia', 'ZM', 'ZMB', 894, 'ZMK', 'Kwacha', 'ZK', 'ZM.png'),
 (239, 'Zimbabwe', 'ZW', 'ZWE', 716, 'ZWD', 'Dollar', 'Z$', 'ZW.png');
 
-ALTER TABLE `mstCurrency` CHANGE `country` `countryname` VARCHAR( 200 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
+ALTER TABLE `mstCurrency` CHANGE `name` `countryname` VARCHAR( 200 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
 ALTER TABLE `mstCurrency` CHANGE `currrency_symbol` `currency_symbol` VARCHAR( 3 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ;
 
