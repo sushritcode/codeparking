@@ -27,3 +27,22 @@ clear:both;
 {
 	height:350px;
 }
+.stepsRegistration
+{
+	height: 2px; 
+	width: 100%; 
+	position: absolute; 
+	top: -30px;
+	background-color:#438eb9;
+	color:white;
+	left:60px;
+}
+.stepsRegistration.active
+{
+	background-color: #d15b47;
+	color: #d15b47;
+	font-weight:bold;
+	height:4px;
+	line-height: 30px;
+	text-align: center;
+}

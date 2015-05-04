@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row clearfix">
-		<div class="col-md-9 column">
+		<div class="col-md-10 column">
 			<div class="carousel slide corosolHtmBox" id="carousel-144227" >
 				<!--ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#carousel-144227" style="border:1px solid">
@@ -12,6 +12,13 @@
 				</ol-->
 				<div class="carousel-inner">
 					<div class="item corosolHtmItem active">
+						<div class="row">
+							 <div class="col-md-2 stepsRegistration active">1 of 6</div>
+							 <div class="col-md-2 stepsRegistration">2 of 6</div>
+							 <div class="col-md-2 stepsRegistration">3 of 6</div>
+							 <div class="col-md-2 stepsRegistration">4 of 6</div>
+							 <div class="col-md-2 stepsRegistration">5 of 6</div>
+						</div>
 						<form class="form-horizontal" name="basic-details">
 <fieldset>
 <!-- Form Name -->
@@ -91,6 +98,14 @@
 
 					</div>
 					<div class="item corosolHtmItem">
+						<div class="row">
+							 <div class="col-md-2 stepsRegistration">1 of 6</div>
+							 <div class="col-md-2 stepsRegistration active">2 of 6</div>
+							 <div class="col-md-2 stepsRegistration">3 of 6</div>
+							 <div class="col-md-2 stepsRegistration">4 of 6</div>
+							 <div class="col-md-2 stepsRegistration">5 of 6</div>
+						</div>
+
 						<form class="form-horizontal" name="cntact-details">
 <fieldset>
 
@@ -149,6 +164,14 @@
 
 					</div>
 					<div class="item corosolHtmItem">
+						<div class="row">
+							 <div class="col-md-2 stepsRegistration">1 of 6</div>
+							 <div class="col-md-2 stepsRegistration">2 of 6</div>
+							 <div class="col-md-2 stepsRegistration active">3 of 6</div>
+							 <div class="col-md-2 stepsRegistration">4 of 6</div>
+							 <div class="col-md-2 stepsRegistration">5 of 6</div>
+						</div>
+
 						<form class="form-horizontal" name="address-details">
 <fieldset>
 
@@ -195,6 +218,14 @@
 
 					</div>
 					<div class="item corosolHtmItem">
+						<div class="row">
+							 <div class="col-md-2 stepsRegistration">1 of 6</div>
+							 <div class="col-md-2 stepsRegistration">2 of 6</div>
+							 <div class="col-md-2 stepsRegistration">3 of 6</div>
+							 <div class="col-md-2 stepsRegistration active">4 of 6</div>
+							 <div class="col-md-2 stepsRegistration">5 of 6</div>
+						</div>
+
 						<form class="form-horizontal" name="social-media">
 <fieldset>
 
@@ -253,7 +284,15 @@
 </form>
 
 					</div>
-					<div class="item corosolHtmItem">	
+					<div class="item corosolHtmItem">
+						<div class="row">
+							 <div class="col-md-2 stepsRegistration">1 of 6</div>
+							 <div class="col-md-2 stepsRegistration">2 of 6</div>
+							 <div class="col-md-2 stepsRegistration">3 of 6</div>
+							 <div class="col-md-2 stepsRegistration">4 of 6</div>
+							 <div class="col-md-2 stepsRegistration active">5 of 6</div>
+						</div>
+	
 						<form class="form-horizontal">
 <fieldset>
 
