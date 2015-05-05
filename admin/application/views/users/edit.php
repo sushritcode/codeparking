@@ -59,7 +59,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="companyname"></label>  
   <div class="col-md-5">
-  <input id="companyname" name="companyname" placeholder="Company Name" class="form-control input-md" required="" type="text" required value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["companyname"];?>" >
+  <input id="companyname" name="companyname" placeholder="Company Name" class="form-control " required="" type="text" required value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["companyname"];?>" >
     
   </div>
 </div>
@@ -68,7 +68,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="natureofbusiness"></label>  
   <div class="col-md-5">
-  <input id="natureofbusiness" name="natureofbusiness" placeholder="Nature of Bussiness" class="form-control input-md" required="" type="text" value = "<?php echo $recordUserProfile->$form_table_map["basic-details"]["natureofbusiness"];?>">
+  <input id="natureofbusiness" name="natureofbusiness" placeholder="Nature of Bussiness" class="form-control " required="" type="text" value = "<?php echo $recordUserProfile->$form_table_map["basic-details"]["natureofbusiness"];?>">
     
   </div>
 </div>
@@ -77,7 +77,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="displayName"></label>  
   <div class="col-md-5">
-  <input id="displayName" name="displayName" placeholder="Display Name" class="form-control input-md" type="text" required value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["displayName"];?>">    
+  <input id="displayName" name="displayName" placeholder="Display Name" class="form-control " type="text" required value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["displayName"];?>">    
   </div>
 </div>
 
@@ -85,7 +85,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="companyURL"></label>  
   <div class="col-md-5">
-  <input id="companyURL" name="companyURL" placeholder="Company URI" class="form-control input-md" required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["companyURL"];?>">
+  <input id="companyURL" name="companyURL" placeholder="Company URI" class="form-control " required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["basic-details"]["companyURL"];?>">
     
   </div>
 </div>
@@ -134,7 +134,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="phone1"></label>  
   <div class="col-md-5">
-  <input id="phone1" name="phone1" placeholder="Phone #1" class="form-control input-md" required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["phone1"];?>" >
+  <input id="phone1" name="phone1" placeholder="Phone #1" class="form-control " required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["phone1"];?>" >
     
   </div>
 </div>
@@ -143,7 +143,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="phone2"></label>  
   <div class="col-md-5">
-  <input id="phone2" name="phone2" placeholder="Phone #2" class="form-control input-md" required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["phone2"];?>" >
+  <input id="phone2" name="phone2" placeholder="Phone #2" class="form-control " required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["phone2"];?>" >
     
   </div>
 </div>
@@ -152,7 +152,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="mobile"></label>  
   <div class="col-md-5">
-  <input id="mobile" name="mobile" placeholder="Mobile Number" class="form-control input-md" required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["mobile"];?>" >
+  <input id="mobile" name="mobile" placeholder="Mobile Number" class="form-control " required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["mobile"];?>" >
     
   </div>
 </div>
@@ -161,7 +161,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="SecondryEmail"></label>  
   <div class="col-md-5">
-  <input id="SecondryEmail" name="SecondryEmail" placeholder="Secondry Email Id" class="form-control input-md" required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["SecondryEmail"];?>" >
+  <input id="SecondryEmail" name="SecondryEmail" placeholder="Secondry Email Id" class="form-control " required="" type="text" value="<?php echo $recordUserProfile->$form_table_map["contact-details"]["SecondryEmail"];?>" >
     
   </div>
 </div>
@@ -254,7 +254,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="facebookid"></label>  
   <div class="col-md-5">
-  <input id="facebookid" name="facebookid" placeholder="Facebook" class="form-control input-md" type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["facebookid"];?>" >
+  <input id="facebookid" name="facebookid" placeholder="Facebook" class="form-control " type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["facebookid"];?>" >
     
   </div>
 </div>
@@ -263,7 +263,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="twitter"></label>  
   <div class="col-md-5">
-  <input id="twitter" name="twitter" placeholder="Twitter" class="form-control input-md" type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["twitter"];?>" >
+  <input id="twitter" name="twitter" placeholder="Twitter" class="form-control " type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["twitter"];?>" >
     
   </div>
 </div>
@@ -272,7 +272,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="googleplus"></label>  
   <div class="col-md-5">
-  <input id="googleplus" name="googleplus" placeholder="Google +" class="form-control input-md" type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["googleplus"];?>" >
+  <input id="googleplus" name="googleplus" placeholder="Google +" class="form-control " type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["googleplus"];?>" >
     
   </div>
 </div>
@@ -281,7 +281,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="linkedin"></label>  
   <div class="col-md-5">
-  <input id="linkedin" name="linkedin" placeholder="Linked In" class="form-control input-md" type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["linkedin"];?>">
+  <input id="linkedin" name="linkedin" placeholder="Linked In" class="form-control " type="text" value="<?php echo $recordUserProfile->$form_table_map["social-media"]["linkedin"];?>">
     
   </div>
 </div>
@@ -321,7 +321,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="billersName"></label>  
   <div class="col-md-5">
-  <input id="billersName" name="billersName" placeholder="Billers name" class="form-control input-md" type="text" value="<?php echo $recordUserProfile->$form_table_map["billinglocal"]["billersName"];?>"> 
+  <input id="billersName" name="billersName" placeholder="Billers name" class="form-control " type="text" value="<?php echo $recordUserProfile->$form_table_map["billinglocal"]["billersName"];?>"> 
     
   </div>
 </div>
