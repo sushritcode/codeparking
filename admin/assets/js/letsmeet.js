@@ -476,31 +476,30 @@ function loginResponse()
 };
 function slideCorosal(ele, frmName)
 {
-
-
 	var uri = "?formname="+frmName.name+"&";
-	var len  = document.forms["basic-details"].getElementsByTagName("input").length;
-	var eleArrray = document.forms["basic-details"].getElementsByTagName("input");
+	var len  = document.forms[frmName.name].getElementsByTagName("input").length;
+	var eleArrray = document.forms[frmName.name].getElementsByTagName("input");
 	for(var i=0;i<len;i++)
 		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
-	var len  = document.forms["basic-details"].getElementsByTagName("textarea").length;
-	var eleArrray = document.forms["basic-details"].getElementsByTagName("textarea");
+	var len  = document.forms[frmName.name].getElementsByTagName("textarea").length;
+	var eleArrray = document.forms[frmName.name].getElementsByTagName("textarea");
 	for(var i=0;i<len;i++)
 		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
-	var len  = document.forms["basic-details"].getElementsByTagName("select").length;
-	var eleArrray = document.forms["basic-details"].getElementsByTagName("select");
+	var len  = document.forms[frmName.name].getElementsByTagName("select").length;
+	var eleArrray = document.forms[frmName.name].getElementsByTagName("select");
 	for(var i=0;i<len;i++)
 		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
 
 	var frmAction =BASEURL+"users/save/";
 	xmlhttp = initAjax();
 	xmlhttp.corosalObj = ele
-	xmlhttp.onreadystatechange = function(ele) { 
-		if(xmlhttp.readyState==4)
-		{
-			xmlhttp.corosalObj.setAttribute("data-slide-to",xmlhttp.corosalObj.attributes['next-slide'].value);
-		} 
-	};
+		xmlhttp.onreadystatechange = function() 
+		{ 
+			if(xmlhttp.readyState==4)
+			{
+				document.getElementById("next-carousel").click();
+			} 
+		};
 	var url = frmAction+uri;
 	xmlhttp.open("POST",url,true);
 	xmlhttp.send(null);

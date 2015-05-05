@@ -106,7 +106,7 @@
 							 <div class="col-md-2 stepsRegistration">5 of 6</div>
 						</div>
 
-						<form class="form-horizontal" name="cntact-details">
+						<form class="form-horizontal" name="contact-details">
 <fieldset>
 
 <!-- Form Name -->
@@ -191,7 +191,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="address2"></label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address2" name="address2">Address #1</textarea>
+    <textarea class="form-control" id="address2" name="address2">Address 1</textarea>
   </div>
 </div>
 
@@ -199,7 +199,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="address3"></label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="address3" name="address3">Address #2</textarea>
+    <textarea class="form-control" id="address3" name="address3">Address 2</textarea>
   </div>
 </div>
 </div>
@@ -313,7 +313,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="currency"></label>
   <div class="col-md-5">
-    <select id="currency" name="currency" class="form-control" multiple="multiple">
+    <select id="currency" name="currency" class="form-control">
       <option value="" selected>Select Currency</option>
 	 <?php foreach ($recordSetCurrency as $record): ?>
       		<option value="<?php echo $record->id_countries?>" ><?php echo $record->countryname." (".$record->currency_code."-".$record->currency_name."-".$record->currency_symbol.") ";?></option>
@@ -327,10 +327,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="timezones"></label>
   <div class="col-md-5">
-    <select id="timezones" name="timezones" class="form-control" multiple="multiple">
+    <select id="timezones" name="timezones" class="form-control">
       <option value="" selected>Select Time Zones</option>
 	 <?php foreach ($recordSetTimeZone as $record): ?>
-      		<option value="<?php echo $record->id?>" selected><?php echo $record->timezone." - ".$record->name;?></option>
+      		<option value="<?php echo $record->id?>"><?php echo $record->timezone." - ".$record->name;?></option>
 	<?php endforeach;?>
     </select>
   </div>
@@ -341,7 +341,7 @@
   <label class="col-md-4 control-label" for="skip"></label>
   <div class="col-md-12">
     <button id="skip" name="skip" class="btn btn-success fl"   data-slide-to="3" data-target="#carousel-144227"  >Previous</button>
-    <button id="done" name="done" class="btn btn-success fr" next-slide="1" onClick="javascript:slideCorosal(this , document.forms['billinglocal']);">Done</button>
+    <button id="done" name="done" class="btn btn-success fr"   data-slide-to="" data-target="#carousel-144227" next-slide="1" onClick="javascript:slideCorosal(this,document.forms['billinglocal']);"  >Finished</button>
   </div>
 </div>
 <div class="cl"></div>
@@ -350,10 +350,11 @@
 </form>
 
 					</div>
-
 				</div> 
+					 <a id="prev-carousel" class="left1 carousel-control1" href="#carousel-144227" data-slide="prev">&nbsp;
+					 </a> 
+					 <a id="next-carousel" class="right1 carousel-control1" href="#carousel-144227" data-slide="next">&nbsp;
+					</a>
 			</div>
 		</div>
 	</div>
-</div>
-	

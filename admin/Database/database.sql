@@ -575,3 +575,26 @@ CREATE TABLE IF NOT EXISTS `LMUserProfile` (
 INSERT INTO `LMUserProfile` (`ProfileID`, `LMLoginId`, `CompanyName`, `IndustryType`, `DisplayName`, `CompanyWebsite`, `Description`, `NatureOfBusiness`) VALUES
 (1, 5, 'Quadridge1', 0, 'Quadridge', 'http://www.quadridge.com', 'Brief Description Of Company', 'Information Technology');
 
+
+ALTER TABLE `LMUserProfile` ADD `Phone1` VARCHAR( 50 ) NOT NULL ,
+ADD `Phone2` VARCHAR( 50 ) NOT NULL ,
+ADD `MobileNo` VARCHAR( 50 ) NOT NULL ,
+ADD `SecondryEmail` VARCHAR( 50 ) NOT NULL ;
+
+
+ALTER TABLE `LMUserProfile` ADD `PrimaryAddress` TEXT NOT NULL ,
+ADD `Address2` TEXT NOT NULL ,
+ADD `Address3` TEXT NOT NULL ;
+
+
+ALTER TABLE `LMUserProfile` ADD `FacebookId` VARCHAR( 200 ) NOT NULL ,
+ADD `TwitterId` VARCHAR( 200 ) NOT NULL ,
+ADD `GooglePlus` VARCHAR( 200 ) NOT NULL ,
+ADD `LinkedIn` VARCHAR( 200 ) NOT NULL ;
+
+
+ALTER TABLE `LMUserProfile` ADD `BillingName` VARCHAR( 255 ) NOT NULL ,
+ADD `Currency` VARCHAR( 100 ) NOT NULL ,
+ADD `Timezones` VARCHAR( 100 ) NOT NULL ;
+
+

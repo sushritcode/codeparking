@@ -95,6 +95,7 @@ class Users_model extends CI_Model
 		$this->load->helper('my_extra_functions');
 		$formTableMap = form_table_map();
 		$formValues = $this->input->get(NULL,true);
+		//print_r($formValues);exit;
 		$numEntries =  $this->db->where('LMLoginId = ', $this->session->userdata('LMLoginId'))->get('LMUserProfile')->num_rows();
 		if($numEntries == 0)
 		{
@@ -109,8 +110,10 @@ class Users_model extends CI_Model
 
 				foreach($formValues as $key => $value):
 					if($key != "formname"):
-					$this->db->set( $formTableMap[$formValues['formname']][$key] , trim($value));
-				endif;
+						if(isset($formTableMap[$formValues['formname']][$key]) && $value !=""):
+							$this->db->set( $formTableMap[$formValues['formname']][$key] , trim($value));
+						endif;
+					endif;
 				endforeach;
 				$this->db->where('LMLoginId' ,$this->session->userdata('LMLoginId'));
 				$this->db->update('LMUserProfile');

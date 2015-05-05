@@ -43,10 +43,14 @@ if ( ! function_exists('form_table_map'))
         {
 
 		//formname
-		$arrForms = array("basic-details"=>array());
+		$arrForms = array("basic-details"=>array(),"contact-details"=>array(),"address-details"=>array(),"social-media"=>array(),"billinglocal"=>array());
 
 		//formelementname 
 		$arrForms["basic-details"] = array("companyname"=>"CompanyName","natureofbusiness"=>"NatureOfBusiness","displayName"=>"DisplayName","companyURL"=>"CompanyWebsite","briefDescription"=>"Description","industryType"=>"IndustryType");
+		$arrForms["contact-details"] = array("phone1"=>"Phone1","phone2"=>"Phone2","mobile"=>"MobileNo","SecondryEmail"=>"SecondryEmail");
+		$arrForms["address-details"] = array("address1"=>"PrimaryAddress","address2"=>"Address2","address3"=>"Address3");
+		$arrForms["social-media"] = array("facebookid"=>"FacebookId","twitter"=>"TwitterId","googleplus"=>"GooglePlus","linkedin"=>"LinkedIn");
+		$arrForms["billinglocal"] = array("billersName"=>"BillingName","currency"=>"Currency","timezones"=>"Timezones" );
 		return $arrForms;
         }
 }
