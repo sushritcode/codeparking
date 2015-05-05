@@ -476,6 +476,8 @@ function loginResponse()
 };
 function slideCorosal(ele, frmName)
 {
+
+	$('#myModal').modal('show')
 	var uri = "?formname="+frmName.name+"&";
 	var len  = document.forms[frmName.name].getElementsByTagName("input").length;
 	var eleArrray = document.forms[frmName.name].getElementsByTagName("input");
@@ -498,6 +500,8 @@ function slideCorosal(ele, frmName)
 			if(xmlhttp.readyState==4)
 			{
 				document.getElementById("next-carousel").click();
+					
+				$('#myModal').modal('hide');
 			} 
 		};
 	var url = frmAction+uri;

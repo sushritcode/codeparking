@@ -6,6 +6,15 @@ class Users_model extends CI_Model
 	{
 		parent::__construct();
 	}
+	function loadUserProfile($id)
+	{
+		if ($id != "")
+		{
+			$this->db->where(array('LMLoginId' => $id));
+			return $this->db->get('LMUserProfile')->row();
+		}
+		return null;
+	}
 	function insertUsers()
 	{
 

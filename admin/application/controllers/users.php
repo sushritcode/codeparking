@@ -28,11 +28,18 @@ class Users extends CI_Controller {
 		
 		$data = array();
 		$data['base_url'] = $this->config->item('base_url');
-
 		$this->load->helper('my_extra_functions');
+		
 		$data['recordSetIndustry'] = industry_list();
 		$data['recordSetTimeZone'] = timezone_list();
 		$data['recordSetCurrency'] = currency_list();
+		$data['form_table_map'] = form_table_map();
+
+
+		$this->load->model('Users_model');
+
+		$data['recordUserProfile'] = $this->Users_model->loadUserProfile($this->session->userdata('LMLoginId'));
+	
 		$this->load->view('admin_header', $data);
 		$this->load->view('admin_navigation', $data);
 		$this->load->view('users/edit', $data);
