@@ -507,5 +507,5 @@ function slideCorosal(ele, frmName)
 	var url = frmAction+uri;
 	xmlhttp.open("POST",url,true);
 	xmlhttp.send(null);
-	return true;
+	return false;
 };

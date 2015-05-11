@@ -76,7 +76,12 @@ class Users_model extends CI_Model
 		$this->db->set('LMCreatedOn', trim($date));
 		$this->db->set('LMCreatedBy', 'website');
 		$this->db->insert('LMLoginUsers');
-		$result = '';
+
+		$result = '';	
+		$where = "LMEmailAddress='".trim($EmailAddress)."'";
+	    	$result = $this->db->get_where("LMLoginUsers",$where)->row();
+ 		$this->db->set('LMLoginId',$result->LMLoginId);
+		$this->db->insert('LMUserProfile');
 
 
 		$data['result'] = "User (<b>".$EmailAddress."</b>) Please Login.<br />";
