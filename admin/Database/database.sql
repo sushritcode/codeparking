@@ -598,3 +598,28 @@ ADD `Currency` VARCHAR( 100 ) NOT NULL ,
 ADD `Timezones` VARCHAR( 100 ) NOT NULL ;
 
 
+CREATE TABLE IF NOT EXISTS `LMContactDetails` (
+  `ContactId` int(11) NOT NULL AUTO_INCREMENT,
+  `ContactName` varchar(200) NOT NULL,
+  `ContactEmailAddress` varchar(100) NOT NULL,
+  `ContactMobileNo` varchar(20) NOT NULL,
+  `GroupID` int(5) NOT NULL,
+  `Association` int(11) NOT NULL,
+  `ContactStatus` enum('0','1') NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ContactId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `LMGroupDetails` (
+  `LMGroupId` int(11) NOT NULL AUTO_INCREMENT,
+  `GroupName` varchar(200) NOT NULL,
+  `Association` int(6) NOT NULL,
+  `GroupStatus` enum('0','1') DEFAULT '1',
+  PRIMARY KEY (`LMGroupId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
