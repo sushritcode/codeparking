@@ -474,10 +474,9 @@ function loginResponse()
 
 	}
 };
-function slideCorosal(ele, frmName)
-{
+function getAllElementsValURI(frmName)
+{	
 
-	$('#myModal').modal('show')
 	var uri = "?formname="+frmName.name+"&";
 	var len  = document.forms[frmName.name].getElementsByTagName("input").length;
 	var eleArrray = document.forms[frmName.name].getElementsByTagName("input");
@@ -492,6 +491,17 @@ function slideCorosal(ele, frmName)
 	for(var i=0;i<len;i++)
 		uri+=eleArrray[i].name+"="+eleArrray[i].value+"&";
 
+	return uri;
+
+
+	
+};
+function slideCorosal(ele, frmName)
+{
+
+	$('#myModal').modal('show')
+	var uri = getAllElementsValURI(frmName);
+	
 	var frmAction =BASEURL+"users/save/";
 	xmlhttp = initAjax();
 	xmlhttp.corosalObj = ele
@@ -501,6 +511,23 @@ function slideCorosal(ele, frmName)
 			{
 				document.getElementById("next-carousel").click();
 					
+				$('#myModal').modal('hide');
+			} 
+		};
+	var url = frmAction+uri;
+	xmlhttp.open("POST",url,true);
+	xmlhttp.send(null);
+	return false;
+};
+function frmSubmit(frmName)
+{
+	var frmAction = document.forms[frmName.name].action;
+	var uri = getAllElementsValURI(frmName);
+	xmlhttp = initAjax();
+		xmlhttp.onreadystatechange = function() 
+		{ 
+			if(xmlhttp.readyState==4)
+			{
 				$('#myModal').modal('hide');
 			} 
 		};
