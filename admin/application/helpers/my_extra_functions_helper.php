@@ -43,7 +43,13 @@ if ( ! function_exists('form_table_map'))
         {
 
 		//formname
-		$arrForms = array("basic-details"=>array(),"contact-details"=>array(),"address-details"=>array(),"social-media"=>array(),"billinglocal"=>array());
+		$arrForms = array(	"basic-details"=>array(),
+					"contact-details"=>array(),
+					"address-details"=>array(),
+					"social-media"=>array(),
+					"billinglocal"=>array(),
+					"addContact"=>array()
+				 );
 
 		//formelementname 
 		$arrForms["basic-details"] = array("companyname"=>"CompanyName","natureofbusiness"=>"NatureOfBusiness","displayName"=>"DisplayName","companyURL"=>"CompanyWebsite","briefDescription"=>"Description","industryType"=>"IndustryType");
@@ -51,7 +57,87 @@ if ( ! function_exists('form_table_map'))
 		$arrForms["address-details"] = array("address1"=>"PrimaryAddress","address2"=>"Address2","address3"=>"Address3");
 		$arrForms["social-media"] = array("facebookid"=>"FacebookId","twitter"=>"TwitterId","googleplus"=>"GooglePlus","linkedin"=>"LinkedIn");
 		$arrForms["billinglocal"] = array("billersName"=>"BillingName","currency"=>"Currency","timezones"=>"Timezones" );
+		$arrForms["addContact"] = array("contactName"=>"ContactName" , "contactEmail"=>"ContactEmailAddress" , "contactMobile"=>"ContactMobileNo" , "groupName"=>"GroupID");
 		return $arrForms;
         }
 }
+
+
+if ( ! function_exists('modal_dialog_loader'))
+{
+
+	function modal_dialog_loader($header ='' , $message='')
+	{
+
+		$html ="";
+
+		$html .= "<div id=\"myModal\" class=\"modal fade\" style=\"padding:210px;\">";
+		$html .= " <div class=\"modal-dialog\">";
+		$html .= "   <div class=\"modal-content\">";
+		$html .= "     <div class=\"modal-header\">";
+		if(trim($header) !="")
+			$html .= $header;
+		else
+			$html .= "Processing Request.....";
+		$html .= "      </div>";
+		$html .= "     <div class=\"modal-body\">";	
+		if(trim($message) !="")
+			$html .= $message;
+		else
+			$html .= "Processing Request.....";
+
+		$html .= "       <p>Please wait !!!! </p>";
+		$html .= "     </div>";
+		$html .= "     <div class=\"modal-footer\">";
+		$html .= "       <!--button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button-->";
+		$html .= "       <!--button type=\"button\" class=\"btn btn-primary\">Save changes</button-->";
+		$html .= "     </div>";
+		$html .= "   </div><!-- /.modal-content -->";
+		$html .= " </div><!-- /.modal-dialog -->";
+		$html .= " </div><!-- /.modal -->";
+
+		return $html;
+	}
+}
+
+if( ! function_exists ('contacts_list'))
+{
+	function contacts_list()
+	{
+
+		$ci =& get_instance();
+                $ci->load->database();
+                $ci->db->select("ContactId, ContactName, ContactEmailAddress, ContactMobileNo, GroupID, Association, ContactStatus ")->from('LMContactDetails');
+                $query = $ci->db->get();
+                $recordSet['list'] = $query->result();
+                return $recordSet['list'];
+	}
+}
+
+if( ! function_exists ('contacts_group'))
+{
+	function contacts_group()
+	{
+
+		$ci =& get_instance();
+                $ci->load->database();
+                $ci->db->select("LMGroupId, GroupName, Association, GroupStatus")->from('LMGroupDetails');
+                $query = $ci->db->get();
+                $recordSet['list'] = $query->result();
+                return $recordSet['list'];
+	}
+}
+if( ! function_exists ('local_messages'))
+{
+	function local_messages($controllerName)
+	{
+		$arrMessages = array('contacts'=>array());
+		$arrMessages['contacts'] = Array("0"=>"Contact not Saved !!!",
+						 "1"=>"Contact Saved Suvcessfully",
+						 "2"=>"Duplicate Contact "); 
+		if(isset($arrMessages[$controllerName]))
+			return $arrMessages[$controllerName];
+	}
+}
+	
 ?>
