@@ -1,11 +1,19 @@
 <?php echo $loaderUI;?>
 <div class="col-md-3 column"></div>
 <div class="col-md-3 column">
-	<form class="form-horizontal" style="margin:80px 25px 13px 30px;" name="addContact" action=<?php echo $base_url."contacts/save";?> method="POST">
+	<form class="form-horizontal" style="margin:80px 25px 13px 30px;" name="addContact" action=<?php echo $base_url."contacts/save";?> method="POST" onclick="javascript:document.getElementById('resultDiv').style.display='none';">
 	<fieldset>
 
 	<!-- Form Name -->
 	<legend>Add Contact Details</legend>
+
+	<!-- Error Div -->
+  	<div id="resultDiv" class="control-group" style="display:none;">
+	  <label for="error-success" class="control-label"></label>
+	  <div class="controls">
+	        <p id="resultMessage"></p>
+	  </div>
+	</div>
 
 	<!-- Text input-->
 	<div class="control-group">
