@@ -134,7 +134,9 @@ if( ! function_exists ('local_messages'))
 		$arrMessages = array('contacts'=>array());
 		$arrMessages['contacts'] = Array("0"=>"Contact not Saved !!!",
 						 "1"=>"Contact Saved Suvcessfully",
-						 "2"=>"Duplicate Contact "); 
+						 "2"=>"Duplicate Contact ",
+						 "3"=>"Contact Details not Found",
+						 "4"=>"Contact Details Updated Sucessfully"); 
 		if(isset($arrMessages[$controllerName]))
 			return $arrMessages[$controllerName];
 	}
