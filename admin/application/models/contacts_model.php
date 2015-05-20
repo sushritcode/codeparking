@@ -12,7 +12,7 @@ class Contacts_model extends CI_Model
 		$this->db
 			->select('a.ContactId, a.ContactName, a.ContactEmailAddress, a.ContactMobileNo, b.GroupName, a.Association, a.ContactStatus')
 			->from('LMContactDetails a, LMGroupDetails b')
-			->where("a.GroupID = b.LMGroupID AND a.Association = b.Association")
+			->where("a.GroupID = b.LMGroupID AND a.Association = b.Association and a.Association='".$this->session->userdata('LMLoginId') ."'")
 			->order_by('ContactId desc ');
 		$query = $this->db->get();
 		$recordSet['list'] = $query->result();
