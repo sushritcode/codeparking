@@ -529,6 +529,10 @@ function frmSubmit(frmName)
 			if(xmlhttp.readyState==4)
 			{
 				$('#myModal').modal('hide');
+				document.getElementById("resultDiv").style.display="";
+				document.getElementById("resultMessage").className="text-danger";
+				document.getElementById("resultMessage").innerHTML = xmlhttp.responseText;
+				
 			} 
 		};
 	var url = frmAction+uri;
