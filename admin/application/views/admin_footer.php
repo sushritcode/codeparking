@@ -4,6 +4,9 @@ $css_root_url = $base_url."assets/css/";
 $images_root_url = $base_url."assets/images/";
 
 ?>
+	</div>
+</div>
+<div class="row clearfix">
 		<div class="footer">
 				<div class="footer-inner">
 					<!-- #section:basics/footer -->
@@ -305,6 +308,8 @@ $images_root_url = $base_url."assets/images/";
 			
 			})
 		</script>
+</div>
+</div>
 		
 	</body>
 </html>

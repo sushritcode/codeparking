@@ -49,7 +49,10 @@ $avatar_root_url = $base_url."assets/avatars/";
 	</head>
 
 	<body class="no-skin">
+		<div class="container">
 		<!-- #section:basics/navbar.layout -->
+		<div class="row clearfix" style="padding: 0px; margin: 0px;">
+		
 		<div id="navbar" class="navbar navbar-default">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
@@ -387,3 +390,5 @@ $avatar_root_url = $base_url."assets/avatars/";
 				<!-- /section:basics/navbar.dropdown -->
 			</div><!-- /.navbar-container -->
 		</div>
+		</div> <!-- Ist row clearfix closed here-->
+		<div class="row clearfix">

@@ -1,3 +1,4 @@
+<div class="col-md-2 column">
 <div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
@@ -380,4 +381,6 @@
 					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
 				</script>
 			</div>
-</div>			
+</div>
+</div>
+<div class="col-md-10 column">
