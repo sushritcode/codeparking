@@ -12,7 +12,7 @@ class Contacts_model extends CI_Model
 		$this->load->helper('my_extra_functions');
 		$formTableMap = form_table_map();
 		$formValues = $this->input->get(NULL,true);
-		$numEntries =  $this->db->where("GroupID ='".trim($this->input->get('groupName'))."' and Association ='". $this->session->userdata('LMLoginId')."'")->get('LMContactDetails')->num_rows();
+		$numEntries =  $this->db->where("GroupID ='".trim($this->input->get('groupName'))."' and Association ='". $this->session->userdata('LMLoginId')."' and ContactEmailAddress = '".trim($this->input->get('contactEmail'))."'")->get('LMContactDetails')->num_rows();
 		$flag=0;
 		if($numEntries == 0)
 		{
@@ -25,7 +25,6 @@ class Contacts_model extends CI_Model
 					foreach($formValues as $key => $value):
 						if($key != "formname"):
 							if(isset($formTableMap[$formValues['formname']][$key]) && $value !=""):
-								print  "<br>".$formTableMap[$formValues['formname']][$key]."--".trim($value);
 								$this->db->set( $formTableMap[$formValues['formname']][$key] , trim($value));
 							endif;
 						endif;
