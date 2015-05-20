@@ -13,7 +13,17 @@ class Contacts extends CI_Controller
 	{
 		$data = array();
 		$data['base_url'] = $this->config->item('base_url');
+		
+		$this->load->model('Contacts_model');
+		$this->load->helper('my_extra_functions');
+			
+		$data['loaderUI'] = modal_dialog_loader();
+		$data["resultGetAll"] = $this->Contacts_model->getAll();	
 
+		$this->load->view('admin_header', $data);
+		$this->load->view('admin_navigation', $data);
+		$this->load->view('contacts/index', $data);
+		$this->load->view('admin_footer', $data);
 	}
 	function add()
 	{
