@@ -27,8 +27,16 @@
 							<td align="center"><?php echo $record->ContactMobileNo;?></td>
 							<td align="center"><?php echo $record->GroupName;?></td>
 							<td align="center">
-								<img width="15" height="15" src="<?php echo $images_root_url."edit.png";?>" title="Edit <?php echo $record->ContactName?> Details"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img width="15" height="15" src="<?php echo $images_root_url."disable.png";?>" title="Edit <?php echo $record->ContactName?> Details"  />
+									<a href='<?php echo $base_url?>contacts/load/<?php echo $record->ContactId;?>'><img width="15" height="15" src="<?php echo $images_root_url."edit.png";?>" title="Edit <?php echo $record->ContactName?> Details"  /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<?php if($record->ContactStatus == 1):?>
+									<a href='<?php echo $base_url?>contacts/disable/<?php echo $record->ContactId?>' title="Disable <?php echo $record->ContactName;?>">
+									<img width="15" height="15" src="<?php echo $images_root_url."disable.png";?>"  />
+									</a>
+								<?php else:?>
+									<a href='<?php echo $base_url?>contacts/enable/<?php echo $record->ContactId?>' title="Enable <?php echo $record->ContactName;?>">
+									<img width="15" height="15" src="<?php echo $images_root_url."enable.png";?>"  />
+									</a>
+								<?php endif;?>
 								
 							</td>
 						</tr>
