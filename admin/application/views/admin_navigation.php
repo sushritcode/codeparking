@@ -78,27 +78,18 @@
 
 								<ul class="submenu">
 									<li class="">
-										<a href="top-menu.html">
+										<a href="<?php echo $base_url."contacts/"?>">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Show Contacts
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="<?php echo $base_url."contacts/add"?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											Add Contact
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-1.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Update Contact
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-2.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Disable Contact
 										</a>
 
 										<b class="arrow"></b>
