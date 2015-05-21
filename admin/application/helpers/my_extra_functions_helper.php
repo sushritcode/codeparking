@@ -48,7 +48,8 @@ if ( ! function_exists('form_table_map'))
 					"address-details"=>array(),
 					"social-media"=>array(),
 					"billinglocal"=>array(),
-					"addContact"=>array()
+					"addContact"=>array(),
+					"addGroup"=>array()
 				 );
 
 		//formelementname 
@@ -58,6 +59,7 @@ if ( ! function_exists('form_table_map'))
 		$arrForms["social-media"] = array("facebookid"=>"FacebookId","twitter"=>"TwitterId","googleplus"=>"GooglePlus","linkedin"=>"LinkedIn");
 		$arrForms["billinglocal"] = array("billersName"=>"BillingName","currency"=>"Currency","timezones"=>"Timezones" );
 		$arrForms["addContact"] = array("contactName"=>"ContactName" , "contactEmail"=>"ContactEmailAddress" , "contactMobile"=>"ContactMobileNo" , "groupName"=>"GroupID");
+		$arrForms["addGroup"]=array("groupName"=>"GroupName");
 		return $arrForms;
         }
 }
@@ -131,12 +133,17 @@ if( ! function_exists ('local_messages'))
 {
 	function local_messages($controllerName)
 	{
-		$arrMessages = array('contacts'=>array());
+		$arrMessages = array('contacts'=>array() , 'groups'=>array());
 		$arrMessages['contacts'] = Array("0"=>"Contact not Saved !!!",
 						 "1"=>"Contact Saved Suvcessfully",
 						 "2"=>"Duplicate Contact ",
 						 "3"=>"Contact Details not Found",
 						 "4"=>"Contact Details Updated Sucessfully"); 
+		$arrMessages['groups'] = Array("0"=>"Group Already Present",
+						"1"=>"Group Saved Successfully",
+						"2"=>"Group not Found",
+						"3"=>"Group Name Already in Use",
+						"4"=>"Group Details updated successfully");
 		if(isset($arrMessages[$controllerName]))
 			return $arrMessages[$controllerName];
 	}
