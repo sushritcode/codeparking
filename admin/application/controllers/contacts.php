@@ -31,7 +31,7 @@ class Contacts extends CI_Controller
 		echo $arrMessage[$data["resultUpdate"]];
 
 	}
-	function load($contactId)
+	function load()
 	{
 		
 		$data = array();
