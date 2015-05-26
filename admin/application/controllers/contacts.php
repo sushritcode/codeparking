@@ -6,7 +6,7 @@ class Contacts extends CI_Controller
 
 	function __construct()
 	{
-		$this->loginRequired = Array("index","add","save","load","update","enable","disable");
+		$this->loginRequired = Array("index","add","save","load","update","enable","disable","import","savecsv");
 		parent::__construct();
 	}
 	function enable()
@@ -95,8 +95,54 @@ class Contacts extends CI_Controller
 		$arrMessage = local_messages($this->router->class);
 		echo $arrMessage[$data["resultInsert"]];
 	}
+	function import()
+	{
+		$data = array();
+		$data['base_url'] = $this->config->item('base_url');
+		
+		$this->load->model('Contacts_model');
+		$this->load->helper('my_extra_functions');
+			
+		$data['loaderUI'] = modal_dialog_loader();
+		$data['contacts_group'] = contacts_group();
+
+		$this->load->view('admin_header', $data);
+		$this->load->view('admin_navigation', $data);
+		$this->load->view('contacts/import', $data);
+		$this->load->view('admin_footer', $data);
+	}
+	function savecsv()
+	{	
+		$this->load->model('Contacts_model');
+		$this->load->helper('my_extra_functions');
+		$data = array();
+		$data['base_url'] = $this->config->item('base_url');
+		
+
+		$arrMessage = local_messages($this->router->class);
+		$data['loaderUI'] = modal_dialog_loader();
+		$data['contacts_group'] = contacts_group();
 
 
+		$type = explode(".",$_FILES['selectFile']['name']);
+		$error_msg = "";
+		if(strtolower(end($type)) != 'csv')
+			$error_msg = $arrMessage[5];
+		if(trim($_POST['groupName']) == "" )
+			$error_msg = $arrMessage[6];
+		
+
+		$data['error_msg'] = $error_msg;
+		$data["resultInsert"] = Array();
+		if($error_msg == "")
+			$data["resultInsert"] = $this->Contacts_model->savecsv();
+
+
+		$this->load->view('admin_header', $data);
+		$this->load->view('admin_navigation', $data);
+		$this->load->view('contacts/import', $data);
+		$this->load->view('admin_footer', $data);
+	}
 
 }
 
