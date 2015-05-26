@@ -138,7 +138,9 @@ if( ! function_exists ('local_messages'))
 						 "1"=>"Contact Saved Suvcessfully",
 						 "2"=>"Duplicate Contact ",
 						 "3"=>"Contact Details not Found",
-						 "4"=>"Contact Details Updated Sucessfully"); 
+						 "4"=>"Contact Details Updated Sucessfully",
+						 "5"=>"Uploaded file should be a csv file",
+						 "6"=>"Group not Selected"); 
 		$arrMessages['groups'] = Array("0"=>"Group Already Present",
 						"1"=>"Group Saved Successfully",
 						"2"=>"Group not Found",
@@ -148,5 +150,6 @@ if( ! function_exists ('local_messages'))
 			return $arrMessages[$controllerName];
 	}
 }
+
 	
 ?>
