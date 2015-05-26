@@ -112,6 +112,42 @@ class Contacts_model extends CI_Model
 		return $flag;
 
 	}
+	function savecsv()
+	{
+		$handle = fopen($_FILES['selectFile']['tmp_name'], "r");
+		$firstRow = false;
+
+		$arrResult = Array("success"=>Array(),"fail"=>Array(),"dup"=>Array());
+
+		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) 
+		{
+			if($firstRow) 
+				$firstRow = false; 
+			else 
+			{
+				$num_entry =  $this->db->where("GroupID ='".trim($this->input->get('groupName'))."' and Association ='". $this->session->userdata('LMLoginId')."' and ContactEmailAddress = '".trim($data[1])."'")->get('LMContactDetails')->num_rows();
+				if(trim($data[0]) == "" || filter_var($data[1], FILTER_VALIDATE_EMAIL) === false || trim($data[2]) == "")
+					array_push($arrResult['fail'],$data);
+				elseif($num_entry > 0)
+					array_push($arrResult['dup'],$data);
+				else
+				{
+
+
+					$this->db->set("ContactName",$data[0]);
+					$this->db->set("ContactEmailAddress",$data[1]);
+					$this->db->set("ContactMobileNo",$data[2]);
+					$this->db->set("GroupID",$this->input->get("groupName"));
+					$this->db->set("Association",$this->session->userdata("LMLoginId"));
+					$this->db->insert('LMContactDetails');
+					array_push($arrResult['success'],$data);
+				}
+			}
+		}
+	
+		fclose($handle);	
+		return $arrResult;
+	}
 }
 
 ?>
