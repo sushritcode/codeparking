@@ -1,6 +1,6 @@
 <?php echo $loaderUI;?>
 <div class="col-md-2 column"></div>
-<div class="col-md-6 column">
+<div class="col-md-8 column">
 
 <form name="importcontact" id="importcontact" class="form-horizontal" method="POST" action="<?php echo $base_url;?>contacts/savecsv"  enctype="multipart/form-data" style="margin:80px 25px 13px 30px;" onclick="javascript:document.getElementById('resultDiv').style.display='none';"> 
 <fieldset>
@@ -53,5 +53,49 @@
 
 </fieldset>
 </form>
+<br/>
+<br/>
+<br/>
+<?php if(isset($resultInsert)):?>
+	<table class="table table-condensed">
+	<?php $keyFlag = ""; $count=1;?>
+	<?php foreach($resultInsert as $key => $record):?>
+		<?php if($key != $keyFlag):?>
+			<?php 
+				if($key =="success"):
+					$class="success";
+					$caption  = "Inserted Contacts";
+				elseif ($key=="fail"):
+					$class="warning";
+					$caption  = "Incorrect Contacts";
+				elseif($key=="dup"):
+					$class="info";
+					$caption  = "Duplicated Contacts";
+				endif;
+			?>
+			<tr class="<?php echo $class;?>">
+				<td colspan="4"><b><?php echo $caption;?></b></td>
+			</tr>
+		<?php endif;?>
+		<?php if(count($record) == 0):?>
+
+			<tr class="">
+				<td colspan="4"><b><?php echo "No Contacts.";?></b></td>
+			</tr>
+
+		<?php endif;?>
+		<?php for($i=0;$i < count($record);$i++):?>
+			<tr>
+				<td><?php echo $count;?></td>
+				<td><?php echo $record[$i][0];?></td>
+				<td><?php echo $record[$i][1];?></td>
+				<td><?php echo $record[$i][2];?></td>
+			</tr>
+		<?php $count+=1;?>
+		<?php endfor;?>
+		<?php $keyFlag = $key;?>
+	<?php endforeach;?>
+	</table>
+<?php endif;?>
 </div>
-<?php print_r($resultInsert); ?>
+
