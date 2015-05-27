@@ -130,9 +130,8 @@
 							</li>
 
 							<li class="">
-                                                                <a href="#" class="dropdown-toggle">
+                                                                <a href="<?php echo $base_url."contacts/import";?>">
                                                                         <i class="menu-icon"></i>
-
                                                                         Import Addresses (csv)
                                                                 </a>
 
