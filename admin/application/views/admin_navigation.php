@@ -137,8 +137,8 @@
 
 							</li>
 							<li class="">
-                                                                <a href="#" class="dropdown-toggle">
-                                                                        <i class="menu-icon fa"></i>
+                                                                <a href="<?php echo $base_url."contacts/exportcsv";?>">
+                                                                        <i class="menu-icon"></i>
 
                                                                         Export Addresses (csv)
                                                                 </a>
