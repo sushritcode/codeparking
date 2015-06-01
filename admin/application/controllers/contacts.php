@@ -6,8 +6,17 @@ class Contacts extends CI_Controller
 
 	function __construct()
 	{
-		$this->loginRequired = Array("index","add","save","load","update","enable","disable","import","savecsv");
+		$this->loginRequired = Array("index","add","save","load","update","enable","disable","import","savecsv","exportcsv");
 		parent::__construct();
+	}
+	function exportcsv()
+	{
+		$this->load->model('Contacts_model');
+		$this->load->helper('my_extra_functions');
+		
+		$query = $this->db->query('Select * from LMContactDetails;');
+		query_to_csv($query,TRUE,"contacts.csv");
+		
 	}
 	function enable()
 	{
